@@ -1,7 +1,3 @@
-/**
- * Accessibility Tree Driver
- * ARIA/live region management and screen reader bridge
- */
 export * from "./types.js";
 export * from "./live-region-manager.js";
 export * from "./state-properties-manager.js";

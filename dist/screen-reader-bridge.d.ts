@@ -1,7 +1,3 @@
-/**
- * Feature 3: Screen Reader Bridge
- * Browser-safe screen reader detection and structured announcements
- */
 import type { Disposable } from "./types.js";
 import type { LiveRegionManagerAPI } from "./live-region-manager.js";
 export interface ScreenReaderDetectionResult {

@@ -1,7 +1,3 @@
-/**
- * Feature 5: axe-core Integration & Validation
- * Runtime ARIA validation using axe-core (optional peer dependency)
- */
 import type { Disposable } from "./types.js";
 export interface AxeRunConfig {
     rules?: string[];

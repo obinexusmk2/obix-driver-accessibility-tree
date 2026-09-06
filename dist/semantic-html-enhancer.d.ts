@@ -1,7 +1,3 @@
-/**
- * Feature 6: Semantic HTML Enhancer
- * Auto-inject missing ARIA attributes where they can be inferred
- */
 import type { Disposable } from "./types.js";
 import type { AriaStateManagerAPI } from "./state-properties-manager.js";
 export interface EnhancementRule {

@@ -1,7 +1,3 @@
-/**
- * Feature 1: Live Region Manager
- * Dynamic content announcements for screen readers
- */
 export function createLiveRegionManager(config) {
     const regions = new Map();
     const clearTimers = new Map();
@@ -19,7 +15,6 @@ export function createLiveRegionManager(config) {
         if (regionConfig?.label) {
             el.setAttribute("aria-label", regionConfig.label);
         }
-        // Visually hidden but accessible to screen readers
         el.style.position = "absolute";
         el.style.width = "1px";
         el.style.height = "1px";
@@ -46,9 +41,7 @@ export function createLiveRegionManager(config) {
         return {
             id,
             announce(message) {
-                // Clear then set to ensure screen readers re-read
                 element.textContent = "";
-                // Force reflow before setting new content
                 void element.offsetWidth;
                 element.textContent = message;
                 scheduleClean(id, element);

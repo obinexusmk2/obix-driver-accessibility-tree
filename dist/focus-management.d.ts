@@ -1,7 +1,3 @@
-/**
- * Feature 9: Focus Management System
- * Programmatic focus control, focus traps, save/restore
- */
 import type { Disposable } from "./types.js";
 export interface FocusTrapConfig {
     container: Element;

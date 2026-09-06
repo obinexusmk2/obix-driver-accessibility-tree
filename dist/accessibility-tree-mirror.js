@@ -1,8 +1,3 @@
-/**
- * Feature 4: Accessibility Tree Mirror
- * Real-time DOM-to-Accessibility Tree synchronization with MutationObserver
- */
-/** Implied ARIA role mapping from HTML tag names */
 const IMPLIED_ROLES = {
     a: "link",
     article: "article",
@@ -51,7 +46,6 @@ function buildNode(element, filter) {
         element.title ||
         undefined;
     const description = element.getAttribute("aria-describedby") || undefined;
-    // Collect aria-* attributes
     const attributes = {};
     if (element.attributes) {
         for (let i = 0; i < element.attributes.length; i++) {
@@ -87,14 +81,12 @@ function diffNodes(prev, curr, path, result) {
     }
     if (!prev || !curr)
         return;
-    // Check if node itself changed
     if (prev.role !== curr.role ||
         prev.label !== curr.label ||
         prev.description !== curr.description ||
         JSON.stringify(prev.attributes) !== JSON.stringify(curr.attributes)) {
         result.push({ type: "changed", path, oldNode: prev, newNode: curr });
     }
-    // Diff children
     const prevChildren = prev.children ?? [];
     const currChildren = curr.children ?? [];
     const maxLen = Math.max(prevChildren.length, currChildren.length);

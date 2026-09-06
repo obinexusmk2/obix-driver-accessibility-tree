@@ -1,7 +1,3 @@
-/**
- * Feature 2: ARIA Widget Compliance Engine
- * W3C ARIA Authoring Practices design patterns with validation
- */
 function createAccordionSpec() {
     return {
         setup(container, deps, navId) {
@@ -228,7 +224,7 @@ function getPatternSpec(pattern) {
         case "slider": return createSliderSpec();
         case "menu-bar": return createMenuBarSpec();
         case "dialog": return createDialogSpec();
-        default: return createDialogSpec(); // Fallback
+        default: return createDialogSpec();
     }
 }
 export function createWidgetComplianceEngine(deps) {

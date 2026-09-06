@@ -1,7 +1,3 @@
-/**
- * Feature 9: Focus Management System
- * Programmatic focus control, focus traps, save/restore
- */
 const FOCUSABLE_SELECTOR = [
     "a[href]",
     "button:not(:disabled)",

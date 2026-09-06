@@ -1,10 +1,4 @@
-/**
- * Accessibility Tree Driver
- * ARIA/live region management and screen reader bridge
- */
-// Re-export all types
 export * from "./types.js";
-// Re-export all feature factories and their types
 export * from "./live-region-manager.js";
 export * from "./state-properties-manager.js";
 export * from "./focus-management.js";
@@ -27,7 +21,6 @@ import { createAxeIntegration } from "./axe-core-integration.js";
 import { createFrameworkIntegration } from "./framework-integration.js";
 export function createAccessibilityTreeDriver(config) {
     let initialized = false;
-    // Sub-features (created lazily during initialize)
     let liveRegions;
     let stateManager;
     let focusManager;
@@ -38,14 +31,12 @@ export function createAccessibilityTreeDriver(config) {
     let widgetCompliance;
     let axeIntegration;
     let framework;
-    // Legacy compatibility: node map for updateAccessibilityNode
     const nodeMap = new Map();
     const driver = {
         async initialize() {
             if (initialized)
                 return;
             initialized = true;
-            // Create all sub-features
             stateManager = createAriaStateManager();
             focusManager = createFocusManager();
             liveRegions = createLiveRegionManager({
@@ -81,9 +72,7 @@ export function createAccessibilityTreeDriver(config) {
                 screenReaderBridge,
                 stateManager,
             });
-            // Start tree observation
             treeMirror.observe();
-            // Set screen reader mode if configured
             if (config.screenReaderHints) {
                 screenReaderBridge.setOptimizationMode(true);
             }
@@ -107,7 +96,6 @@ export function createAccessibilityTreeDriver(config) {
                 liveRegions.announceGlobal(message, level);
             }
             else if (typeof config.rootElement.setAttribute === "function") {
-                // Fallback for uninitialized state
                 config.rootElement.setAttribute("aria-live", level);
                 config.rootElement.setAttribute("aria-label", message);
             }
@@ -139,7 +127,6 @@ export function createAccessibilityTreeDriver(config) {
             if (treeMirror) {
                 return treeMirror.snapshot();
             }
-            // Fallback for uninitialized state
             const children = Array.from(nodeMap.values());
             return {
                 role: "root",
@@ -179,7 +166,6 @@ export function createAccessibilityTreeDriver(config) {
             nodeMap.clear();
             initialized = false;
         },
-        // Sub-feature accessors
         get liveRegions() { return liveRegions; },
         get stateManager() { return stateManager; },
         get focusManager() { return focusManager; },

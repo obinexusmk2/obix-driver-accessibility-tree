@@ -1,7 +1,3 @@
-/**
- * Feature 8: State & Properties Manager
- * Reactive ARIA state management with batch updates
- */
 import type { Disposable } from "./types.js";
 export type AriaStateChangeHandler = (element: Element, key: string, value: string | boolean | undefined) => void;
 export interface AriaStateManagerConfig {

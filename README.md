@@ -375,6 +375,25 @@ driver.framework          // FrameworkIntegrationAPI
 
 ---
 
+## Documentation
+
+In-depth guides live in [`docs/`](docs/):
+
+| # | Guide |
+|---|-------|
+| 01 | [Overview](docs/01-overview.md) |
+| 02 | [Installation and Setup](docs/02-installation-and-setup.md) |
+| 03 | [Driver Lifecycle and Configuration](docs/03-driver-lifecycle.md) |
+| 04 | [Live Regions and Announcements](docs/04-live-regions-and-announcements.md) |
+| 05 | [Screen Reader Bridge](docs/05-screen-reader-bridge.md) |
+| 06 | [Accessibility Tree Mirror](docs/06-accessibility-tree-mirror.md) |
+| 07 | [Widget Compliance and Semantic Enhancement](docs/07-widget-compliance-and-semantic-enhancement.md) |
+| 08 | [Keyboard Navigation](docs/08-keyboard-navigation.md) |
+| 09 | [State and Focus Management](docs/09-state-and-focus-management.md) |
+| 10 | [axe-core and Framework Integration](docs/10-axe-and-framework-integration.md) |
+
+---
+
 ## License
 
 MIT — OBINexus <okpalan@protonmail.com>

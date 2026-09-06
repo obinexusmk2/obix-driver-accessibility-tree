@@ -1,7 +1,3 @@
-/**
- * Feature 7: Keyboard Navigation Controller
- * ARIA widget keyboard patterns (roving tabindex, activedescendant, type-ahead)
- */
 import type { Disposable } from "./types.js";
 import type { FocusManagerAPI } from "./focus-management.js";
 export type KeyboardPattern = "roving-tabindex" | "activedescendant" | "grid";

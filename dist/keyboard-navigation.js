@@ -1,7 +1,3 @@
-/**
- * Feature 7: Keyboard Navigation Controller
- * ARIA widget keyboard patterns (roving tabindex, activedescendant, type-ahead)
- */
 export function createKeyboardNavigationController() {
     const navigations = new Map();
     return {

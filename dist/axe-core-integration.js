@@ -1,8 +1,3 @@
-/**
- * Feature 5: axe-core Integration & Validation
- * Runtime ARIA validation using axe-core (optional peer dependency)
- */
-// Default ARIA-related axe rules
 const ARIA_RULES = [
     "aria-allowed-attr",
     "aria-allowed-role",
@@ -24,7 +19,6 @@ const ARIA_RULES = [
     "aria-valid-attr-value",
 ];
 export function createAxeIntegration(config) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let axeModule = null;
     let loadAttempted = false;
     let available = false;
@@ -33,7 +27,6 @@ export function createAxeIntegration(config) {
             return available;
         loadAttempted = true;
         try {
-            // Dynamic import - axe-core is an optional peer dependency
             axeModule = await Function('return import("axe-core")')();
             available = true;
         }

@@ -1,7 +1,3 @@
-/**
- * Feature 1: Live Region Manager
- * Dynamic content announcements for screen readers
- */
 import type { AriaLiveRegion, LiveRegionDefaults, Disposable } from "./types.js";
 export interface LiveRegionManagerConfig {
     container: Element;

@@ -1,6 +1,6 @@
 {
   "name": "@obinexusltd/obix-driver-accessibility-tree",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "OBIX Accessibility Tree Driver - ARIA/live region management and screen reader bridge",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,8 +10,15 @@
     "test": "vitest run"
   },
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "docs"
   ],
+  "directories": {
+    "lib": "dist",
+    "doc": "docs",
+    "test": "test"
+  },
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -30,5 +37,8 @@
   "author": "OBINexus <okpalan@protonmail.com>",
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "typescript": "~5.4.0"
   }
 }

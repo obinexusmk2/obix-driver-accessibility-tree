@@ -1,7 +1,3 @@
-/**
- * Feature 8: State & Properties Manager
- * Reactive ARIA state management with batch updates
- */
 export function createAriaStateManager(config) {
     const states = new Map();
     const handlers = new Set();

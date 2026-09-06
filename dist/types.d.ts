@@ -1,6 +1,3 @@
-/**
- * Shared types for the Accessibility Tree Driver
- */
 export type AriaLiveRegion = "off" | "polite" | "assertive";
 export type AriaRole = string;
 export interface Disposable {
@@ -13,11 +10,8 @@ export interface LiveRegionDefaults {
     label?: string;
 }
 export interface AccessibilityTreeDriverConfig {
-    /** Root element for accessibility tree */
     rootElement: Element;
-    /** Default configuration for live regions */
     liveRegionDefaults?: LiveRegionDefaults;
-    /** Screen reader hints and optimizations */
     screenReaderHints?: boolean;
 }
 export interface AccessibilityNode {

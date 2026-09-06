@@ -1,7 +1,3 @@
-/**
- * Feature 2: ARIA Widget Compliance Engine
- * W3C ARIA Authoring Practices design patterns with validation
- */
 import type { Disposable } from "./types.js";
 import type { AriaStateManagerAPI } from "./state-properties-manager.js";
 import type { FocusManagerAPI } from "./focus-management.js";

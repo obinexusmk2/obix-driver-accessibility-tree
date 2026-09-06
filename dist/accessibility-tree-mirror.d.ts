@@ -1,7 +1,3 @@
-/**
- * Feature 4: Accessibility Tree Mirror
- * Real-time DOM-to-Accessibility Tree synchronization with MutationObserver
- */
 import type { AccessibilityNode, Disposable } from "./types.js";
 export interface TreeMirrorConfig {
     rootElement: Element;

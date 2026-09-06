@@ -1,17 +1,11 @@
-/**
- * Feature 3: Screen Reader Bridge
- * Browser-safe screen reader detection and structured announcements
- */
 export function createScreenReaderBridge(config) {
     let optimizationMode = false;
     const lrm = config.liveRegionManager;
-    // Create dedicated regions for different announcement types
     const politeRegion = lrm.createRegion("__sr-polite__", { level: "polite" });
     const assertiveRegion = lrm.createRegion("__sr-assertive__", { level: "assertive" });
     const routeRegion = lrm.createRegion("__sr-route__", { level: "assertive" });
     function detect() {
         const signals = [];
-        // Check forced-colors (high contrast mode, common with screen readers)
         if (typeof window !== "undefined" && window.matchMedia) {
             if (window.matchMedia("(forced-colors: active)").matches) {
                 signals.push("forced-colors-active");
@@ -23,13 +17,10 @@ export function createScreenReaderBridge(config) {
                 signals.push("prefers-contrast-more");
             }
         }
-        // Check for common screen reader indicators in the DOM
         if (typeof document !== "undefined") {
-            // NVDA injects a browsing mode indicator
             if (document.querySelector("[data-nvda]")) {
                 signals.push("nvda-indicator");
             }
-            // Check if aria-live regions are being actively consumed
             if (document.querySelector('[role="application"]')) {
                 signals.push("application-role-present");
             }

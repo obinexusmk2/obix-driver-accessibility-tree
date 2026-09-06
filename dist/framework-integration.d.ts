@@ -1,7 +1,3 @@
-/**
- * Feature 10: OBINexus Framework Integration
- * Accessible navigation pathways, interaction modes, unified facade
- */
 import type { Disposable, AccessibilityTreeDriverAPI } from "./types.js";
 import type { LiveRegionManagerAPI } from "./live-region-manager.js";
 import type { FocusManagerAPI } from "./focus-management.js";

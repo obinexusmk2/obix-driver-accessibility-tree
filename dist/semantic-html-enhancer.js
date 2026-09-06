@@ -1,7 +1,3 @@
-/**
- * Feature 6: Semantic HTML Enhancer
- * Auto-inject missing ARIA attributes where they can be inferred
- */
 function createBuiltinRules() {
     return [
         {
@@ -18,7 +14,6 @@ function createBuiltinRules() {
             description: "Image missing alt text",
             test: (el) => !el.hasAttribute("alt"),
             enhance: (el, sm) => {
-                // Mark decorative if no alt provided
                 sm.setState(el, "role", "presentation");
                 el.setAttribute("alt", "");
             },

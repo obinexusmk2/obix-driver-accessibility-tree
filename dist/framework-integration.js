@@ -1,7 +1,3 @@
-/**
- * Feature 10: OBINexus Framework Integration
- * Accessible navigation pathways, interaction modes, unified facade
- */
 export function createFrameworkIntegration(config) {
     const pathways = new Map();
     const modeHandlers = new Set();
@@ -31,7 +27,6 @@ export function createFrameworkIntegration(config) {
         target.addEventListener(type, handler);
         listeners.push({ target, type, handler });
     }
-    // Set up interaction mode detection
     if (typeof config.rootElement.addEventListener === "function") {
         addListener(config.rootElement, "keydown", onKeyDown);
         addListener(config.rootElement, "pointerdown", onPointerDown);
@@ -58,14 +53,12 @@ export function createFrameworkIntegration(config) {
             const landmark = pathway.landmarks.find((l) => l.label === landmarkLabel);
             if (!landmark)
                 return false;
-            // Use focus manager if available, otherwise direct focus
             if (config.focusManager) {
                 config.focusManager.moveFocus(landmark.element);
             }
             else if (typeof landmark.element.focus === "function") {
                 landmark.element.focus();
             }
-            // Announce navigation if screen reader bridge is available
             if (config.screenReaderBridge) {
                 config.screenReaderBridge.announcePolite(`Navigated to ${landmarkLabel}`);
             }
